@@ -1,9 +1,5 @@
 package Activity2;
 
-/**
- * Created by Teacher on 1/7/2019.
- */
-
 import java.util.List;
 import java.util.ArrayList;
 
@@ -39,7 +35,8 @@ public class Deck {
     public Deck(String[] ranks, String[] suits, int[] values) {
         /* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
         cards = new ArrayList<Card>();
-        
+        dealtcards = new ArrayList<Card>();
+
         for (int i = 0; i < values.length-1; i ++)
         {
             cards.add(new Card (ranks [i], suits [i], values[i]));
@@ -76,10 +73,17 @@ public class Deck {
      */
     public Card deal() {
         /* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-
-            return cards.get(size);
-            
-            size--;
+        if (size < 1)
+        {
+            return null;
+        }
+        else
+        {
+            dealtcards.add(cards.get(cards.size()));
+            cards.remove(cards.size());
+            return dealtcards.get(cards.size());
+        }
+        
     }
 
 
@@ -129,4 +133,3 @@ public class Deck {
         return rtn;
     }
 }
-
