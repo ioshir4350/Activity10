@@ -3,6 +3,7 @@ package Activity2;
 /**
  * Created by Teacher on 1/7/2019.
  */
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -17,6 +18,7 @@ public class Deck {
      * cards contains all the cards in the deck.
      */
     private List<Card> cards;
+    private List<Card> dealtcards;
 
     /**
      * size is the number of not-yet-dealt cards.
@@ -35,7 +37,14 @@ public class Deck {
      * @param values is an array containing all of the card point values.
      */
     public Deck(String[] ranks, String[] suits, int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+        /* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+        cards = new ArrayList<Card>();
+        
+        for (int i = 0; i < values.length-1; i ++)
+        {
+            cards.add(new Card (ranks [i], suits [i], values[i]));
+        }
+        size = cards.size();
     }
 
 
@@ -44,7 +53,12 @@ public class Deck {
      * @return true if this deck is empty, false otherwise.
      */
     public boolean isEmpty() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+        /* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+        if (cards.size() == 0)
+        {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -52,15 +66,25 @@ public class Deck {
      * @return the number of undealt cards in this deck.
      */
     public int size() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+        /* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+        return cards.size();
     }
 
     /**
      * Randomly permute the given collection of cards
      * and reset the size to represent the entire deck.
      */
+    public Card deal() {
+        /* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+
+            return cards.get(size);
+            
+            size--;
+    }
+
+
     public void shuffle() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+        /* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
     }
 
     /**
@@ -68,9 +92,7 @@ public class Deck {
      * @return the card just dealt, or null if all the cards have been
      *         previously dealt.
      */
-    public Card deal() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-    }
+
 
     /**
      * Generates and returns a string representation of this deck.
