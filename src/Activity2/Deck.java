@@ -15,6 +15,7 @@ public class Deck {
      */
     private List<Card> cards;
     private List<Card> dealtcards;
+    private List<Card> shuffled;
 
     /**
      * size is the number of not-yet-dealt cards.
@@ -36,6 +37,7 @@ public class Deck {
         /* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
         cards = new ArrayList<Card>();
         dealtcards = new ArrayList<Card>();
+        shuffled = new ArrayList<Card>();
 
         for (int i = 0; i < values.length-1; i ++)
         {
@@ -83,12 +85,25 @@ public class Deck {
             cards.remove(cards.size());
             return dealtcards.get(cards.size());
         }
-        
+
     }
 
 
     public void shuffle() {
         /* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+        int k = 0;
+        for (int j =0; j<=25; j++)
+        {
+            shuffled.add(cards.get(j));
+            k = k+2;
+        }
+        k = 1;
+        for (int j = 26; j <= 51; j++)
+        {
+            shuffled.add(cards.get(j));
+            k = k+2;
+        }
+
     }
 
     /**
