@@ -94,13 +94,13 @@ public class Deck {
         int k = 0;
         for (int j =0; j<=25; j++)
         {
-            shuffled.add(cards.get(j));
+            shuffled.set(k,cards.get(j));
             k = k+2;
         }
         k = 1;
         for (int j = 26; j <= 51; j++)
         {
-            shuffled.add(cards.get(j));
+            shuffled.set(k,cards.get(j));
             k = k+2;
         }
 
